@@ -46,3 +46,9 @@ while let update = bot.nextUpdateSync() {
 }
 
 fatalError("Server stopped due to error: \(bot.lastError.unwrapOptional)")
+
+router["ssdfsd"] = { context in
+	guard let from = context.message?.from else { return false }
+    context.respondAsync("Hello, \(from.firstName)!")
+	return true
+}
